@@ -6,36 +6,52 @@ import { Building, Calendar, MapPin } from "lucide-react"
 
 const experiences = [
   {
-    company: "Petrofac",
-    position: "Senior Project Manager",
-    period: "2018 - Present",
-    location: "UAE",
-    description: "Leading large-scale oil & gas infrastructure projects, implementing digital transformation initiatives and AI-ready systems.",
-    achievements: ["Delivered $500M+ infrastructure projects", "Implemented AI-driven project management systems", "Led digital transformation initiatives"],
+    company: "Systra",
+    position: "System Manager—Telecom",
+    period: "May 2025 - Present",
+    location: "Abu Dhabi, UAE",
+    description: "Leading PMC technical and contractual reviews for the High-Speed Rail (Abu Dhabi–Dubai) program. Collaborating with Etihad Rail and multidisciplinary bidders.",
+    achievements: ["Directed resolution of 100+ contractor comments", "Managed over 600 bidder queries", "Developed solution-driven clarifications for multi-system tenders"],
   },
   {
-    company: "Systra",
-    position: "Infrastructure Lead",
-    period: "2015 - 2018",
-    location: "Qatar",
-    description: "Managed railway infrastructure projects including telecom systems and digital communication networks.",
-    achievements: ["Delivered Qatar Rail telecommunication infrastructure", "Managed cross-functional teams of 50+ engineers", "Implemented sustainable technology solutions"],
+    company: "Petrofac International",
+    position: "Manager Telecom",
+    period: "Nov 2022 - Apr 2025",
+    location: "Sharjah, UAE",
+    description: "Directed end-to-end telecom solutions for major ADNOC and BP projects. Architected multi-system telecom designs and supported bid proposals.",
+    achievements: ["Reduced engineering man-hours by 30%", "Improved bid success rates by 40%", "Spearheaded vendor evaluation and negotiations"],
   },
   {
     company: "Hill International",
-    position: "Project Manager",
-    period: "2012 - 2015",
-    location: "Saudi Arabia",
-    description: "Oversaw IT and telecom infrastructure development for major construction projects.",
-    achievements: ["Led IT infrastructure modernization", "Managed stakeholder relationships", "Delivered projects on time and under budget"],
+    position: "Manager – Telecommunication, Centralized Control & Signaling",
+    period: "Oct 2020 - Nov 2022",
+    location: "Cairo, Egypt",
+    description: "Led telecommunications and system integration for the Cairo Monorail Project as part of PMC role, optimizing centralized control and SCADA systems.",
+    achievements: ["Enhanced operational efficiency through system optimization", "Managed cross-functional teams", "Maintained strict adherence to project standards and budgets"],
+  },
+  {
+    company: "NK Consortium",
+    position: "Chief Engineer Telecommunication",
+    period: "Mar 2018 - Sep 2020",
+    location: "Jaipur, India",
+    description: "Directed telecom engineering team for WDFC project as part of PMC role, overseeing design and construction of critical systems for Rewari-Vadodara electrified railway.",
+    achievements: ["Ensured timely project delivery", "Successfully managed construction schedules and contractor payments", "Achieved on-time and on-budget completion of Phase I"],
+  },
+  {
+    company: "Petrofac Emirates",
+    position: "Lead Engineer Telecommunication",
+    period: "Mar 2013 - Feb 2018",
+    location: "Abu Dhabi, UAE",
+    description: "Key role in delivering the $3.7 billion Upper Zakum UZ750 Project, leading 25-30 engineers and overseeing development of 4000+ engineering documents.",
+    achievements: ["Delivered $3.7B Upper Zakum UZ750 Project", "Enhanced engineering accuracy through data analytics", "Updated 20+ Petrofac telecommunication standards"],
   },
   {
     company: "Various Organizations",
-    position: "Technical Lead & Engineer",
-    period: "1990 - 2012",
-    location: "Multiple",
-    description: "Progressive roles in engineering and project management across telecom and IT sectors.",
-    achievements: ["Built technical expertise across multiple domains", "Developed leadership and project management skills", "Established foundation for future leadership roles"],
+    position: "Senior Roles in Telecom & Infrastructure",
+    period: "1994 - 2013",
+    location: "UAE, India",
+    description: "Progressive leadership roles across major organizations including RTA Dubai, Mott MacDonald, Siemens, Alcatel, and others in telecom infrastructure.",
+    achievements: ["Led Dubai Light Rail telecom systems", "Managed Delhi Metro Rail telecom networks", "Built expertise across oil & gas, railways, and urban transit"],
   },
 ]
 
@@ -50,7 +66,7 @@ export function ExperienceSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-teal-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
             Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -60,7 +76,7 @@ export function ExperienceSection() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-teal-400 to-primary opacity-50 transform md:-translate-x-px" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-blue-400 to-primary opacity-50 transform md:-translate-x-px" />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -127,7 +143,7 @@ export function ExperienceSection() {
 
       {/* Background decorative elements */}
       <div className="absolute top-40 right-10 w-24 h-24 bg-gradient-to-r from-primary/10 to-transparent rounded-full blur-2xl" />
-      <div className="absolute bottom-40 left-10 w-32 h-32 bg-gradient-to-l from-teal-400/10 to-transparent rounded-full blur-2xl" />
+      <div className="absolute bottom-40 left-10 w-32 h-32 bg-gradient-to-l from-blue-400/10 to-transparent rounded-full blur-2xl" />
     </section>
   )
 }

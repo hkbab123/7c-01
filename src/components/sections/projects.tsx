@@ -21,10 +21,10 @@ const projects = [
     icon: Zap,
   },
   {
-    title: "AIbit.News",
-    description: "Next-generation news aggregation platform leveraging generative AI for personalized content curation and intelligent article summarization.",
-    features: ["AI content curation", "Real-time analysis", "Personalized feeds", "Multi-source aggregation"],
-    status: "Live",
+    title: "The Eternal Vault",
+    description: "A revolutionary book exploring how to protect human stories and data from Big Tech. Learn the 7C Framework for building sovereign digital legacy systems.",
+    features: ["7C Framework methodology", "Data sovereignty principles", "AI ethics guidelines", "Legacy preservation strategies"],
+    status: "Published",
     icon: ExternalLink,
   },
 ]
@@ -32,6 +32,8 @@ const projects = [
 const getStatusColor = (status: string) => {
   switch (status) {
     case "Live":
+      return "bg-green-500/10 text-green-500 border-green-500/20"
+    case "Published":
       return "bg-green-500/10 text-green-500 border-green-500/20"
     case "Beta Testing":
       return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20"
@@ -53,7 +55,7 @@ export function ProjectsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-teal-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -72,7 +74,7 @@ export function ProjectsSection() {
             >
               <Card className="group h-full hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 border-border/50 hover:border-primary/30 glass relative overflow-hidden">
                 {/* Background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-teal-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <CardHeader className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
@@ -105,9 +107,15 @@ export function ProjectsSection() {
                     </div>
                     <Button 
                       className="w-full group-hover:bg-primary/90 transition-colors" 
-                      disabled={project.status !== "Live"}
+                      disabled={project.status !== "Live" && project.status !== "Published"}
+                      asChild={project.status === "Published"}
                     >
-                      {project.status === "Live" ? (
+                      {project.status === "Published" ? (
+                        <a href="https://harishbabry.com" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          View Book
+                        </a>
+                      ) : project.status === "Live" ? (
                         <>
                           <ExternalLink className="mr-2 h-4 w-4" />
                           View Project
@@ -140,16 +148,18 @@ export function ProjectsSection() {
           <p className="text-muted-foreground mb-6">
             Interested in collaborating on innovative infrastructure projects?
           </p>
-          <Button size="lg" variant="outline" className="group border-primary/50 hover:border-primary hover:bg-primary/10">
-            <ExternalLink className="mr-2 h-5 w-5 group-hover:text-primary transition-colors" />
-            Get In Touch
+          <Button size="lg" variant="outline" className="group border-primary/50 hover:border-primary hover:bg-primary/10" asChild>
+            <a href="https://harishbabry.com/contact-form/" target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="mr-2 h-5 w-5 group-hover:text-primary transition-colors" />
+              Get In Touch
+            </a>
           </Button>
         </motion.div>
       </div>
 
       {/* Background decorative elements */}
       <div className="absolute top-32 right-20 w-20 h-20 bg-gradient-to-r from-primary/10 to-transparent rounded-full blur-2xl" />
-      <div className="absolute bottom-32 left-20 w-28 h-28 bg-gradient-to-l from-teal-400/10 to-transparent rounded-full blur-2xl" />
+      <div className="absolute bottom-32 left-20 w-28 h-28 bg-gradient-to-l from-blue-400/10 to-transparent rounded-full blur-2xl" />
     </section>
   )
 }

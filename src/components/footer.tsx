@@ -46,7 +46,7 @@ export function Footer() {
                 <Mail className="h-5 w-5" />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/harishbabry"
+                href="https://www.linkedin.com/in/harishbabry/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-secondary/20 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
@@ -154,7 +154,7 @@ export function Footer() {
 
       {/* Background Effects */}
       <div className="absolute top-0 left-1/4 w-24 h-24 bg-gradient-to-r from-primary/5 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-32 h-32 bg-gradient-to-l from-teal-400/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-32 h-32 bg-gradient-to-l from-blue-400/5 to-transparent rounded-full blur-3xl" />
       
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.02]">

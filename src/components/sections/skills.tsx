@@ -38,7 +38,7 @@ export function SkillsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-teal-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
             Skills & Technologies
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -112,7 +112,7 @@ export function SkillsSection() {
 
       {/* Background decorative elements */}
       <div className="absolute top-20 left-20 w-16 h-16 bg-gradient-to-r from-primary/10 to-transparent rounded-full blur-xl" />
-      <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-l from-teal-400/10 to-transparent rounded-full blur-xl" />
+      <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-l from-blue-400/10 to-transparent rounded-full blur-xl" />
     </section>
   )
 }

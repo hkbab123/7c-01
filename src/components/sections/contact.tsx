@@ -16,7 +16,7 @@ export function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-teal-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
             Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -34,7 +34,7 @@ export function ContactSection() {
               viewport={{ once: true }}
             >
               <Card className="glass border-primary/20 hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-teal-400/5" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-400/5" />
                 <CardContent className="p-8 relative z-10">
                   <h3 className="text-2xl font-display font-semibold mb-8 text-primary">
                     Contact Information
@@ -71,7 +71,7 @@ export function ContactSection() {
                       <div>
                         <p className="font-medium group-hover:text-primary transition-colors">LinkedIn</p>
                         <a 
-                          href="https://linkedin.com/in/harishbabry" 
+                          href="https://www.linkedin.com/in/harishbabry/" 
                           target="_blank" 
                           rel="noopener noreferrer" 
                           className="text-muted-foreground hover:text-primary transition-colors"
@@ -139,7 +139,7 @@ export function ContactSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Button 
                   size="lg"
-                  className="group relative overflow-hidden bg-gradient-to-r from-primary to-teal-600 hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300"
+                  className="group relative overflow-hidden bg-gradient-to-r from-primary to-blue-600 hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300"
                   asChild
                 >
                   <a href="mailto:hkbab123@hotmail.com">
@@ -156,7 +156,7 @@ export function ContactSection() {
                   asChild
                 >
                   <a 
-                    href="https://linkedin.com/in/harishbabry" 
+                    href="https://www.linkedin.com/in/harishbabry/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
@@ -166,7 +166,7 @@ export function ContactSection() {
                 </Button>
               </div>
 
-              <div className="bg-gradient-to-r from-primary/10 to-teal-400/10 p-6 rounded-xl border border-primary/20">
+              <div className="bg-gradient-to-r from-primary/10 to-blue-400/10 p-6 rounded-xl border border-primary/20">
                 <h4 className="font-display font-semibold mb-2 text-primary">Areas of Expertise</h4>
                 <p className="text-sm text-muted-foreground">
                   Infrastructure Project Management • AI & Digital Transformation • 
@@ -181,7 +181,7 @@ export function ContactSection() {
 
       {/* Background decorative elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-primary/10 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-l from-teal-400/10 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-l from-blue-400/10 to-transparent rounded-full blur-3xl" />
       
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-5">

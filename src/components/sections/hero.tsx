@@ -15,9 +15,9 @@ export function HeroSection() {
           className="absolute inset-0 opacity-30"
           animate={{
             background: [
-              "radial-gradient(circle at 20% 50%, #14b8a6 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%)",
               "radial-gradient(circle at 80% 50%, #8b5cf6 0%, transparent 50%)",
-              "radial-gradient(circle at 40% 80%, #14b8a6 0%, transparent 50%)",
+              "radial-gradient(circle at 40% 80%, #3b82f6 0%, transparent 50%)",
             ],
           }}
           transition={{
@@ -66,7 +66,7 @@ export function HeroSection() {
             className="space-y-4"
           >
             <div className="flex items-center justify-center space-x-4 mb-6">
-              <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-teal-400/20 p-2">
+              <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-blue-400/20 p-2">
                 <Image
                   src="/HarishBabry-logo.png"
                   alt="Harish Kumar Babry Logo"
@@ -83,12 +83,14 @@ export function HeroSection() {
               </div>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-display font-bold bg-gradient-to-br from-foreground via-primary to-foreground bg-clip-text text-transparent leading-tight">
-              Harish Kumar Babry
+            <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight relative">
+              <span className="bg-gradient-to-r from-blue-400 via-primary to-purple-400 bg-clip-text text-transparent bg-[length:200%_100%] animate-[shimmer_3s_ease-in-out_infinite] inline-block">
+                Designing Intelligent Systems That Protect Human Stories
+              </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Telecom Systems & Infrastructure Leader | PMP | AI Enthusiast
+            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mt-6">
+              Author of <em className="text-primary font-medium">The Eternal Vault</em> | Building Ethical AI and Human-Centric Systems
             </p>
           </motion.div>
 
@@ -100,7 +102,7 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="group relative overflow-hidden bg-gradient-to-r from-primary to-teal-600 hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300"
+              className="group relative overflow-hidden bg-gradient-to-r from-primary to-blue-600 hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300"
               asChild
             >
               <a href="/HarishBabry_CV.pdf" download>
@@ -117,7 +119,7 @@ export function HeroSection() {
               asChild
             >
               <a 
-                href="https://linkedin.com/in/harishbabry" 
+                href="https://www.linkedin.com/in/harishbabry/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
