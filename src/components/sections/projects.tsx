@@ -8,6 +8,13 @@ import { ExternalLink, GitBranch, Zap } from "lucide-react"
 const projects = [
   {
     title: "The Eternal Vault",
+    description: "A revolutionary book exploring how to protect human stories and data from Big Tech. Learn the 7C Framework for building sovereign digital legacy systems.",
+    features: ["7C Framework methodology", "Data sovereignty principles", "AI ethics guidelines", "Legacy preservation strategies"],
+    status: "Published",
+    icon: ExternalLink,
+  },
+  {
+    title: "The 7C Vault System",
     description: "A revolutionary digital preservation platform combining blockchain technology with AI-driven metadata management for long-term data storage and retrieval.",
     features: ["Blockchain-based immutability", "AI metadata extraction", "Decentralized storage", "Smart contract automation"],
     status: "In Development",
@@ -19,13 +26,6 @@ const projects = [
     features: ["AI-driven risk assessment", "Predictive analytics", "Resource optimization", "Stakeholder automation"],
     status: "Beta Testing",
     icon: Zap,
-  },
-  {
-    title: "The Eternal Vault",
-    description: "A revolutionary book exploring how to protect human stories and data from Big Tech. Learn the 7C Framework for building sovereign digital legacy systems.",
-    features: ["7C Framework methodology", "Data sovereignty principles", "AI ethics guidelines", "Legacy preservation strategies"],
-    status: "Published",
-    icon: ExternalLink,
   },
 ]
 
@@ -110,7 +110,7 @@ export function ProjectsSection() {
                       disabled={project.status !== "Live" && project.status !== "Published"}
                       asChild={project.status === "Published"}
                     >
-                      {project.status === "Published" ? (
+                      {project.status === "Published" && project.title === "The Eternal Vault" ? (
                         <a href="https://harishbabry.com" target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
                           View Book
