@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Mail, Phone, Linkedin, MapPin, Send } from "lucide-react"
+import { Mail, Phone, Linkedin, MapPin } from "lucide-react"
 
 export function ContactSection() {
   return (
@@ -21,7 +21,7 @@ export function ContactSection() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Ready to discuss your next infrastructure project or explore AI-driven solutions? 
-            Let's connect and build the future together.
+            Let&apos;s connect and build the future together.
           </p>
         </motion.div>
 
@@ -131,8 +131,8 @@ export function ContactSection() {
                   Ready to Connect?
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  Whether you're looking to discuss infrastructure projects, explore AI implementations, 
-                  or need expertise in project management, I'm here to help turn your vision into reality.
+                  Whether you&apos;re looking to discuss infrastructure projects, explore AI implementations, 
+                  or need expertise in project management, I&apos;m here to help turn your vision into reality.
                 </p>
               </div>
 

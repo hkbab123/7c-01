@@ -85,17 +85,17 @@ export function SkillsSection() {
 
         {/* Floating skill badges animation */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
-          {["AI", "Blockchain", "PMP", "5G", "IoT", "Cloud"].map((skill, index) => (
+        {["AI", "Blockchain", "PMP", "5G", "IoT", "Cloud"].map((skill) => (
             <motion.div
               key={skill}
               className="absolute text-primary font-bold text-sm"
               initial={{ 
-                x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-                y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+                x: Math.random() * 1000,
+                y: Math.random() * 800,
               }}
               animate={{
-                x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-                y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+                x: Math.random() * 1000,
+                y: Math.random() * 800,
               }}
               transition={{
                 duration: Math.random() * 20 + 20,

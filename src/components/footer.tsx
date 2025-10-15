@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Linkedin, Mail, Sparkles, Heart } from "lucide-react"
+import { Linkedin, Mail, Heart } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -17,8 +18,16 @@ export function Footer() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center space-x-2 mb-4">
-              <Sparkles className="h-8 w-8 text-primary animate-pulse" />
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="relative w-10 h-10 rounded-lg overflow-hidden">
+                <Image
+                  src="/HarishBabry-logo.png"
+                  alt="Harish Kumar Babry Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+              </div>
               <h3 className="text-2xl font-display font-bold">
                 Harish Kumar Babry
               </h3>

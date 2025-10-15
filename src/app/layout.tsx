@@ -12,11 +12,24 @@ export const metadata: Metadata = {
     description: "30+ years of experience in telecom and IT infrastructure projects. AI enthusiast and digital transformation expert.",
     type: "website",
     url: "https://harishbabry.dev",
+    images: [
+      {
+        url: "/HarishBabry-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Harish Kumar Babry - Engineering & Technology Leader",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Harish Kumar Babry - Engineering & Technology Leader",
     description: "30+ years of experience in telecom and IT infrastructure projects. AI enthusiast and digital transformation expert.",
+  },
+  icons: {
+    icon: "/HarishBabry-logo.png",
+    shortcut: "/HarishBabry-logo.png",
+    apple: "/HarishBabry-logo.png",
   },
 };
 

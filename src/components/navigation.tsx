@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Sparkles } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -59,8 +60,17 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Sparkles className="h-6 w-6 text-primary animate-pulse" />
+          <div className="flex items-center space-x-3">
+            <div className="relative w-8 h-8 rounded-lg overflow-hidden">
+              <Image
+                src="/HarishBabry-logo.png"
+                alt="Harish Kumar Babry Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+                priority
+              />
+            </div>
             <span className="font-display font-bold text-xl">
               Harish Kumar Babry
             </span>

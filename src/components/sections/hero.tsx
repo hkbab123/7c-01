@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { FileDown, Linkedin, Sparkles } from "lucide-react"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -34,12 +35,12 @@ export function HeroSection() {
             key={i}
             className="absolute w-1 h-1 bg-primary rounded-full opacity-60"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * 1000,
+              y: Math.random() * 800,
             }}
             animate={{
-              x: Math.random() * (window?.innerWidth || 1000),
-              y: Math.random() * (window?.innerHeight || 1000),
+              x: Math.random() * 1000,
+              y: Math.random() * 800,
             }}
             transition={{
               duration: Math.random() * 10 + 10,
@@ -64,10 +65,22 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-4"
           >
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <Sparkles className="h-8 w-8 text-primary animate-pulse" />
-              <Sparkles className="h-6 w-6 text-primary/70 animate-pulse" style={{ animationDelay: '0.5s' }} />
-              <Sparkles className="h-4 w-4 text-primary/50 animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="flex items-center justify-center space-x-4 mb-6">
+              <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-teal-400/20 p-2">
+                <Image
+                  src="/HarishBabry-logo.png"
+                  alt="Harish Kumar Babry Logo"
+                  width={64}
+                  height={64}
+                  className="object-contain w-full h-full"
+                  priority
+                />
+              </div>
+              <div className="flex items-center space-x-2">
+                <Sparkles className="h-8 w-8 text-primary animate-pulse" />
+                <Sparkles className="h-6 w-6 text-primary/70 animate-pulse" style={{ animationDelay: '0.5s' }} />
+                <Sparkles className="h-4 w-4 text-primary/50 animate-pulse" style={{ animationDelay: '1s' }} />
+              </div>
             </div>
             
             <h1 className="text-6xl md:text-8xl font-display font-bold bg-gradient-to-br from-foreground via-primary to-foreground bg-clip-text text-transparent leading-tight">
