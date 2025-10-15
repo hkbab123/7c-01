@@ -7,7 +7,6 @@ import { format } from 'date-fns'
 
 import { getPost, getPostSlugs } from '@/lib/sanity.queries'
 import { getImageUrl } from '@/lib/sanity'
-import { Post } from '@/lib/sanity.types'
 
 interface Props {
   params: {
@@ -45,10 +44,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+import { ReactNode } from 'react'
+
+interface PortableTextProps {
+  children: ReactNode
+}
+
+interface ImageValue {
+  asset: {
+    _ref: string
+    _type: string
+  }
+  alt?: string
+}
+
+interface LinkValue {
+  href: string
+}
+
 // Portable Text components for rich content
 const portableTextComponents = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ value }: { value: ImageValue }) => {
       const imageUrl = getImageUrl(value)
       if (!imageUrl) return null
       
@@ -70,29 +87,29 @@ const portableTextComponents = {
     },
   },
   block: {
-    h1: ({ children }: any) => (
+    h1: ({ children }: PortableTextProps) => (
       <h1 className="text-4xl font-display font-bold mb-6 mt-8">{children}</h1>
     ),
-    h2: ({ children }: any) => (
+    h2: ({ children }: PortableTextProps) => (
       <h2 className="text-3xl font-display font-bold mb-4 mt-8">{children}</h2>
     ),
-    h3: ({ children }: any) => (
+    h3: ({ children }: PortableTextProps) => (
       <h3 className="text-2xl font-display font-semibold mb-3 mt-6">{children}</h3>
     ),
-    h4: ({ children }: any) => (
+    h4: ({ children }: PortableTextProps) => (
       <h4 className="text-xl font-display font-semibold mb-3 mt-6">{children}</h4>
     ),
-    blockquote: ({ children }: any) => (
+    blockquote: ({ children }: PortableTextProps) => (
       <blockquote className="border-l-4 border-primary pl-6 my-6 text-lg italic text-muted-foreground">
         {children}
       </blockquote>
     ),
-    normal: ({ children }: any) => (
+    normal: ({ children }: PortableTextProps) => (
       <p className="mb-4 leading-relaxed">{children}</p>
     ),
   },
   marks: {
-    link: ({ children, value }: any) => (
+    link: ({ children, value }: { children: ReactNode; value: LinkValue }) => (
       <a
         href={value.href}
         className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -102,13 +119,13 @@ const portableTextComponents = {
         {children}
       </a>
     ),
-    strong: ({ children }: any) => (
+    strong: ({ children }: PortableTextProps) => (
       <strong className="font-semibold">{children}</strong>
     ),
-    em: ({ children }: any) => <em className="italic">{children}</em>,
+    em: ({ children }: PortableTextProps) => <em className="italic">{children}</em>,
   },
   list: {
-    bullet: ({ children }: any) => (
+    bullet: ({ children }: PortableTextProps) => (
       <ul className="list-disc list-inside mb-4 space-y-2">{children}</ul>
     ),
   },

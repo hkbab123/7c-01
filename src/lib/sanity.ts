@@ -14,12 +14,22 @@ export const sanityClient = createClient(config)
 // Set up a helper function for generating Image URLs with only the asset reference data in your documents.
 const builder = imageUrlBuilder(sanityClient)
 
-export const urlFor = (source: any) => {
+interface SanityImageSource {
+  asset: {
+    _ref: string
+    _type: string
+  }
+  alt?: string
+  hotspot?: unknown
+  crop?: unknown
+}
+
+export const urlFor = (source: SanityImageSource) => {
   return builder.image(source)
 }
 
 // Helper to get image URL
-export function getImageUrl(source: any) {
+export function getImageUrl(source: SanityImageSource) {
   if (!source?.asset?._ref) {
     return undefined
   }

@@ -1,5 +1,5 @@
 import { sanityClient } from './sanity'
-import { Post, Author } from './sanity.types'
+import { Post } from './sanity.types'
 
 // GROQ queries
 const postFields = `
