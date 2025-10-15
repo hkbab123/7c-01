@@ -39,7 +39,6 @@ const postFields = `
 
 const postQuery = `*[_type == "post" && slug.current == $slug][0]{ ${postFields} }`
 
-const postsQuery = `*[_type == "post" && defined(publishedAt)] | order(publishedAt desc){ ${postFields} }`
 
 const publishedPostsQuery = `*[_type == "post" && defined(publishedAt) && publishedAt <= now()] | order(publishedAt desc){ ${postFields} }`
 

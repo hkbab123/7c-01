@@ -109,16 +109,19 @@ const portableTextComponents = {
     ),
   },
   marks: {
-    link: ({ children, value }: { children: ReactNode; value: LinkValue }) => (
-      <a
-        href={value.href}
-        className="text-primary hover:text-primary/80 underline underline-offset-2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {children}
-      </a>
-    ),
+    link: ({ children, value }: { children: ReactNode; value?: LinkValue }) => {
+      if (!value?.href) return <span>{children}</span>
+      return (
+        <a
+          href={value.href}
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
+      )
+    },
     strong: ({ children }: PortableTextProps) => (
       <strong className="font-semibold">{children}</strong>
     ),
