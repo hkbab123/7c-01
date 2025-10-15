@@ -45,10 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 import { ReactNode } from 'react'
-
-interface PortableTextProps {
-  children: ReactNode
-}
+import { PortableTextReactComponents } from '@portabletext/react'
 
 interface ImageValue {
   asset: {
@@ -63,7 +60,7 @@ interface LinkValue {
 }
 
 // Portable Text components for rich content
-const portableTextComponents = {
+const portableTextComponents: Partial<PortableTextReactComponents> = {
   types: {
     image: ({ value }: { value: ImageValue }) => {
       const imageUrl = getImageUrl(value)
@@ -87,24 +84,24 @@ const portableTextComponents = {
     },
   },
   block: {
-    h1: ({ children }: PortableTextProps) => (
+    h1: ({ children }) => (
       <h1 className="text-4xl font-display font-bold mb-6 mt-8">{children}</h1>
     ),
-    h2: ({ children }: PortableTextProps) => (
+    h2: ({ children }) => (
       <h2 className="text-3xl font-display font-bold mb-4 mt-8">{children}</h2>
     ),
-    h3: ({ children }: PortableTextProps) => (
+    h3: ({ children }) => (
       <h3 className="text-2xl font-display font-semibold mb-3 mt-6">{children}</h3>
     ),
-    h4: ({ children }: PortableTextProps) => (
+    h4: ({ children }) => (
       <h4 className="text-xl font-display font-semibold mb-3 mt-6">{children}</h4>
     ),
-    blockquote: ({ children }: PortableTextProps) => (
+    blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-primary pl-6 my-6 text-lg italic text-muted-foreground">
         {children}
       </blockquote>
     ),
-    normal: ({ children }: PortableTextProps) => (
+    normal: ({ children }) => (
       <p className="mb-4 leading-relaxed">{children}</p>
     ),
   },
@@ -122,13 +119,13 @@ const portableTextComponents = {
         </a>
       )
     },
-    strong: ({ children }: PortableTextProps) => (
+    strong: ({ children }) => (
       <strong className="font-semibold">{children}</strong>
     ),
-    em: ({ children }: PortableTextProps) => <em className="italic">{children}</em>,
+    em: ({ children }) => <em className="italic">{children}</em>,
   },
   list: {
-    bullet: ({ children }: PortableTextProps) => (
+    bullet: ({ children }) => (
       <ul className="list-disc list-inside mb-4 space-y-2">{children}</ul>
     ),
   },
