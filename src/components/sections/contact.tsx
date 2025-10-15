@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Mail, Phone, Linkedin, MapPin } from "lucide-react"
+import { Mail, Phone, Linkedin, MapPin, ExternalLink } from "lucide-react"
 
 export function ContactSection() {
   return (
@@ -23,6 +23,25 @@ export function ContactSection() {
             Ready to discuss your next infrastructure project or explore AI-driven solutions? 
             Let&apos;s connect and build the future together.
           </p>
+        </motion.div>
+
+        {/* Call to action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p className="text-muted-foreground mb-6">
+            Interested in collaborating on innovative infrastructure projects?
+          </p>
+          <Button size="lg" variant="outline" className="group border-primary/50 hover:border-primary hover:bg-primary/10" asChild>
+            <a href="https://harishbabry.com/contact-form/" target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="mr-2 h-5 w-5 group-hover:text-primary transition-colors" />
+              Get In Touch
+            </a>
+          </Button>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
