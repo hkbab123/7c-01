@@ -2,16 +2,19 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, User, LogOut } from "lucide-react"
 import { useTheme } from "next-themes"
+import { useSession, signOut } from "next-auth/react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import Link from "next/link"
 
 const navItems = [
   { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -19,6 +22,7 @@ export function Navigation() {
   const [mounted, setMounted] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
   const { theme, setTheme } = useTheme()
+  const { data: session } = useSession()
 
   useEffect(() => {
     setMounted(true)
@@ -46,6 +50,12 @@ export function Navigation() {
   }, [])
 
   const scrollToSection = (href: string) => {
+    // Handle external links (like /blog)
+    if (href.startsWith('/')) {
+      window.location.href = href
+      return
+    }
+    
     const element = document.getElementById(href.slice(1))
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
@@ -96,16 +106,44 @@ export function Navigation() {
             ))}
           </div>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="h-9 w-9"
-          >
-            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+          <div className="flex items-center space-x-2">
+            {session ? (
+              <>
+                <Link href={(session.user as any).role === 'admin' ? '/dashboard/admin' : '/dashboard'}>
+                  <Button variant="ghost" size="sm" className="hidden md:flex items-center space-x-2">
+                    <User className="h-4 w-4" />
+                    <span>{session.user?.name}</span>
+                  </Button>
+                </Link>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => signOut()}
+                  className="h-9 w-9"
+                  title="Sign out"
+                >
+                  <LogOut className="h-4 w-4" />
+                </Button>
+              </>
+            ) : (
+              <Link href="/auth/login">
+                <Button variant="ghost" size="sm" className="hidden md:flex items-center space-x-2">
+                  <User className="h-4 w-4" />
+                  <span>Login</span>
+                </Button>
+              </Link>
+            )}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="h-9 w-9"
+            >
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </div>
         </div>
       </div>
     </nav>
