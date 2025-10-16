@@ -6,6 +6,7 @@ import { users } from "./db/schema"
 import { eq } from "drizzle-orm"
 
 const authConfig: NextAuthConfig = {
+  trustHost: true,
   providers: [
     CredentialsProvider({
       name: "credentials",
