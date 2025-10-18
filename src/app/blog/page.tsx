@@ -56,7 +56,7 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background py-12">
+    <div className="min-h-screen bg-background py-12 pt-24">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -64,15 +64,6 @@ export default function BlogPage() {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Insights, thoughts, and experiences in technology, AI, and digital transformation.
           </p>
-        </div>
-
-        {/* Navigation Back */}
-        <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="mb-4">
-              ← Back to Home
-            </Button>
-          </Link>
         </div>
 
         {/* Blog Posts */}

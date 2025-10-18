@@ -53,12 +53,19 @@ export function Navigation() {
   }, [])
 
   const scrollToSection = (href: string) => {
-    // Handle external links (like /blog)
+    // Handle page links (like /blog)
     if (href.startsWith('/')) {
-      window.location.href = href
+      router.push(href)
       return
     }
     
+    // Handle hash links - if not on home page, navigate to home page first
+    if (pathname !== '/') {
+      router.push(`/${href}`)
+      return
+    }
+    
+    // On home page, scroll to section
     const element = document.getElementById(href.slice(1))
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
