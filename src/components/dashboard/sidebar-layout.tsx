@@ -4,6 +4,7 @@ import { ReactNode, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, ChevronRight, LogOut } from 'lucide-react';
+import { signOut } from 'next-auth/react';
 import { cn } from '@/lib/utils';
 
 export interface MenuItem {
@@ -54,7 +55,11 @@ export function SidebarLayout({ children, menuItems, role }: SidebarLayoutProps)
           
           <div className="flex items-center gap-4">
             <span className="text-sm text-muted-foreground">Welcome, {role}</span>
-            <button className="p-2 hover:bg-muted rounded-md">
+            <button 
+              onClick={() => signOut({ callbackUrl: '/auth/signin' })}
+              className="p-2 hover:bg-muted rounded-md"
+              title="Sign Out"
+            >
               <LogOut size={20} />
             </button>
           </div>
