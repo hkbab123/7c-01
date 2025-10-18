@@ -145,7 +145,7 @@ export function Navigation() {
           <div className="flex items-center space-x-2">
             {session ? (
               <>
-                <Link href={(session.user as any).role === 'admin' ? '/dashboard/admin' : '/dashboard'}>
+                <Link href={(session.user as any).role === 'admin' ? '/admin/dashboard' : '/dashboard'}>
                   <Button variant="ghost" size="sm" className="hidden md:flex items-center space-x-2">
                     <User className="h-4 w-4" />
                     <span>{session.user?.name}</span>
@@ -162,7 +162,7 @@ export function Navigation() {
                 </Button>
               </>
             ) : (
-              <Link href="/auth/login">
+              <Link href="/auth/signin">
                 <Button variant="ghost" size="sm" className="hidden md:flex items-center space-x-2">
                   <User className="h-4 w-4" />
                   <span>Login</span>
