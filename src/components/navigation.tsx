@@ -80,6 +80,14 @@ export function Navigation() {
   const menuPaths = navItems.filter(i => i.href.startsWith('/')).map(i => i.href)
   const isKnownPath = pathname === '/' || menuPaths.includes(pathname)
   const showBack = !isKnownPath
+  
+  // Hide navigation on dashboard and auth routes (they have their own navigation)
+  const isDashboard = pathname?.startsWith('/dashboard') || pathname?.startsWith('/admin')
+  const isAuthPage = pathname?.startsWith('/auth/signin')
+  
+  if (isDashboard || isAuthPage) {
+    return null
+  }
 
   const handleBack = () => {
     if (typeof window !== 'undefined' && window.history.length > 1) {
