@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, User, LogOut } from "lucide-react"
+import { Moon, Sun, User, LogOut, ArrowLeft } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useSession, signOut } from "next-auth/react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -23,6 +24,8 @@ export function Navigation() {
   const [activeSection, setActiveSection] = useState("hero")
   const { theme, setTheme } = useTheme()
   const { data: session } = useSession()
+  const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
@@ -66,11 +69,29 @@ export function Navigation() {
     return null
   }
 
+  // Determine if current route is represented in the menu
+  const menuPaths = navItems.filter(i => i.href.startsWith('/')).map(i => i.href)
+  const isKnownPath = pathname === '/' || menuPaths.includes(pathname)
+  const showBack = !isKnownPath
+
+  const handleBack = () => {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      router.back()
+    } else {
+      router.push('/')
+    }
+  }
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-3">
+            {showBack && (
+              <Button variant="ghost" size="icon" onClick={handleBack} className="mr-1 h-9 w-9" title="Go back">
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+            )}
             <div className="relative w-8 h-8 rounded-lg overflow-hidden">
               <Image
                 src="/HarishBabry-logo.png"

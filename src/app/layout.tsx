@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Providers } from "@/components/providers";
+import { Navigation } from "@/components/navigation";
 
 export const metadata: Metadata = {
   title: "Harish Kumar Babry - Telecom Systems & Infrastructure Leader",
@@ -49,6 +50,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Navigation />
             {children}
           </ThemeProvider>
         </Providers>
