@@ -12,6 +12,8 @@ export async function GET() {
         title: blogPosts.title,
         excerpt: blogPosts.excerpt,
         slug: blogPosts.slug,
+        category: blogPosts.category,
+        featuredImage: blogPosts.featuredImage,
         publishedAt: blogPosts.publishedAt,
         author: {
           id: users.id,

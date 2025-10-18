@@ -20,6 +20,8 @@ export const blogPosts = pgTable('blog_posts', {
   content: text('content').notNull(),
   excerpt: text('excerpt'),
   slug: varchar('slug', { length: 255 }).notNull().unique(),
+  category: varchar('category', { length: 100 }).default('general'),
+  featuredImage: text('featured_image'),
   authorId: integer('author_id').notNull(),
   isPublished: boolean('is_published').default(false).notNull(),
   publishedAt: timestamp('published_at'),
