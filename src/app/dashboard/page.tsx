@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, Edit, Eye, Plus } from "lucide-react"
+import { BookOpen, Edit, Eye, Plus, Database } from "lucide-react"
 
 interface BlogPost {
   id: number
@@ -124,14 +124,23 @@ export default function UserDashboard() {
         </div>
 
         {/* Quick Actions */}
-        <div className="mb-8">
+        <div className="mb-8 flex flex-wrap gap-3">
           <Button 
             onClick={() => router.push("/dashboard/posts/new")}
-            className="mb-4"
           >
             <Plus className="h-4 w-4 mr-2" />
             Create New Post
           </Button>
+          
+          {(session.user as any)?.role === "admin" && (
+            <Button 
+              variant="outline"
+              onClick={() => router.push("/dashboard/admin/db")}
+            >
+              <Database className="h-4 w-4 mr-2" />
+              Database Management
+            </Button>
+          )}
         </div>
 
         {/* Blog Posts */}
